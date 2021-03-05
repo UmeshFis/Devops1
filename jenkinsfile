@@ -1,5 +1,6 @@
-pipeline {​​​​
+pipeline {
     agent any
+<<<<<<< HEAD
      stages {​​​​
         stage('Checkout') {​​​​
             steps {​​​​
@@ -9,28 +10,46 @@ checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRe
         }​​​​
         stage('Quality Check') {​​​​
             steps {​​​​
+=======
+     stages {
+        stage('Checkout') {
+            steps {
+
+          echo 'checkout'
+            }
+        }
+        stage('Quality Check') {
+            steps {
+>>>>>>> aed77a9a478d7b421339cba8140ac4eaeeb12c8a
                 echo 'QA verified'
-            }​​​​
-        }​​​​
-        stage('Security Check') {​​​​
-            steps {​​​​
+            }
+        }
+        stage('Security Check') {
+            steps {
                 echo 'All security checks done'
-            }​​​​
-        }​​​​
-        stage('Build Push App') {​​​​
-            steps {​​​​
+            }
+        }
+        stage('Build Push App') {
+            steps {
                 echo 'App push done'
-            }​​​​
-        }​​​​
-         stage('Deploy') {​​​​
-            steps {​​​​
+            }
+        }
+         stage('Deploy') {
+            steps {
                 echo 'Deployment done'
-            }​​​​
-        }​​​​
-         stage('Post Deployment Check') {​​​​
-            steps {​​​​
+            }
+        }
+         stage('Post Deployment Check') {
+            steps {
                 echo 'All deployment check done'
+<<<<<<< HEAD
             }​​​​
         }​​​​
     }​​​​
 }​​​​
+=======
+            }
+        }
+    }
+}
+>>>>>>> aed77a9a478d7b421339cba8140ac4eaeeb12c8a
