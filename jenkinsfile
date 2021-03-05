@@ -1,0 +1,36 @@
+pipeline {​​​​
+    agent any
+     stages {​​​​
+        stage('Checkout') {​​​​
+            steps {​​​​
+
+          echo checkout'
+            }​​​​
+        }​​​​
+        stage('Quality Check') {​​​​
+            steps {​​​​
+                echo 'QA verified'
+            }​​​​
+        }​​​​
+        stage('Security Check') {​​​​
+            steps {​​​​
+                echo 'All security checks done'
+            }​​​​
+        }​​​​
+        stage('Build Push App') {​​​​
+            steps {​​​​
+                echo 'App push done'
+            }​​​​
+        }​​​​
+         stage('Deploy') {​​​​
+            steps {​​​​
+                echo 'Deployment done'
+            }​​​​
+        }​​​​
+         stage('Post Deployment Check') {​​​​
+            steps {​​​​
+                echo 'All deployment check done'
+            }​​​​
+        }​​​​
+    }​​​​
+}​​​​
