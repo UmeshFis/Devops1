@@ -1,15 +1,15 @@
 pipeline {
     agent any
-     stages {​​​​
-        stage('Checkout') {​​​​
-            steps {​​​​
+     stages {
+        stage('Checkout') {
+            steps {
 checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/UmeshFis/Devops1.git']]])
           echo 'checkout'
-            }​​​​
-        }​​​​
-        stage('Quality Check') {​​​​
-            steps {​​​​
-=======
+            }
+        }
+        stage('Quality Check') {
+            steps {
+
      stages {
         stage('Checkout') {
             steps {
@@ -18,9 +18,7 @@ checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRe
             }
         }
         stage('Quality Check') {
-            steps {
->>>>>>> aed77a9a478d7b421339cba8140ac4eaeeb12c8a
-                echo 'QA verified'
+            steps { echo 'QA verified'
             }
         }
         stage('Security Check') {
@@ -41,14 +39,13 @@ checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRe
          stage('Post Deployment Check') {
             steps {
                 echo 'All deployment check done'
-<<<<<<< HEAD
-            }​​​​
-        }​​​​
-    }​​​​
-}​​​​
-=======
+
             }
         }
     }
 }
->>>>>>> aed77a9a478d7b421339cba8140ac4eaeeb12c8a
+
+            }
+        }
+    }
+}
