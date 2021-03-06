@@ -14,6 +14,7 @@ checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRe
         }
         stage('Security Check') {
             steps {
+            dependencyCheck additionalArguments: '--scan=. --format=HTML', odcInstallation: 'OWASP-Dependency-Check'
                 echo 'All security checks done'
             }
         }
